@@ -6,34 +6,54 @@
   <title>Foodie LOVES FOOD</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Courier New', Courier, monospace;
       text-align: center;
-      margin-top: 50px;
-      padding: 0;
       margin: 0;
+      padding: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      background-size: cover;
+      color: white;
     }
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
     button {
       padding: 15px 30px;
       font-size: 18px;
       cursor: pointer;
       margin: 10px;
       border: none;
-      border-radius: 5px;
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #4CAF50;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
-    #ja {
-      background-color: #4CAF50;
-      color: white;
+
+    button:hover {
+      background-color: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
     }
+
     #nein {
-      background-color: #f44336;
+      background-color: rgba(255, 105, 180, 0.8);
       color: white;
     }
+
+    #nein:hover {
+      background-color: rgba(255, 105, 180, 1);
+    }
+
     /* Für den Nein-Button, der sich bei Touchbewegungen bewegen soll */
     @media (max-width: 600px) {
       #nein {
@@ -41,27 +61,46 @@
         transition: all 0.3s ease;
       }
     }
+    
+    /* Text animiert */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    h1 {
+      animation: fadeIn 2s ease-out;
+    }
   </style>
 </head>
 <body>
-  <h1>Kannst du mich später anrufen?</h1>
-  <button id="ja">Ja</button>
-  <button id="nein">Nein</button>
+  <h1>Wann Kannst du dich Treffen 💕</h1>
+  <button id="ja18">18:00 Uhr? 😘</button>
+  <button id="ja19">19:00 Uhr? 💖</button>
+  <button id="nein">Heute nicht... 😞</button>
 
   <script>
     const neinButton = document.getElementById('nein');
-    const jaButton = document.getElementById('ja');
+    const jaButton18 = document.getElementById('ja18');
+    const jaButton19 = document.getElementById('ja19');
 
     // Nein-Button springt weg bei Berührung
     neinButton.addEventListener('touchstart', () => {
       neinButton.style.top = Math.random() * 300 + "px";
       neinButton.style.left = Math.random() * 300 + "px";
+      alert('Sike 😅! Ich hoffe, wir sehen uns bald. 💕');
     });
 
-    // Nachricht bei Ja
-    jaButton.addEventListener('click', () => {
-      alert('THANK YOU ARE SO CCCCCCCCCCCCCCCCCUUUUUUUUUUTTTTTTTTTTTEEEEEEEEEEEEEEEEEEE 😄');
-      console.log('Die Person hat Ja gedrückt!');
+    // Nachricht bei Ja (18 Uhr)
+    jaButton18.addEventListener('click', () => {
+      alert('Kannst du mir es auf Whatsapp schreiben? PS: Du bist super Cute❤️');
+      console.log('Die Person hat 18 Uhr gedrückt!');
+    });
+
+    // Nachricht bei Ja (19 Uhr)
+    jaButton19.addEventListener('click', () => {
+      alert('SEE YOU LATER ALLIGATOR 🐊💕! PS: Du bist so süß, bitte schreib mir auf Whatsapp, ich warte ');
+      console.log('Die Person hat 19 Uhr gedrückt!');
     });
   </script>
 </body>
