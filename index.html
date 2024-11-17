@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nur Ja erlaubt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #nein {
+      position: absolute;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Willst du Schokopizza probieren? 🍫🍕</h1>
+  <button id="ja">Ja</button>
+  <button id="nein">Nein</button>
+
+  <script>
+    const neinButton = document.getElementById('nein');
+    const jaButton = document.getElementById('ja');
+
+    // Nein-Button springt weg
+    neinButton.addEventListener('mouseover', () => {
+      neinButton.style.top = Math.random() * 300 + "px";
+      neinButton.style.left = Math.random() * 300 + "px";
+    });
+
+    // Nachricht bei Ja
+    jaButton.addEventListener('click', () => {
+      alert('Danke, dass du Schokopizza liebst! 😄');
+      console.log('Die Person hat Ja gedrückt!');
+    });
+  </script>
+</body>
+</html>
