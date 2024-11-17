@@ -3,26 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nur Ja erlaubt</title>
+  <title>Foodie LOVES FOOD</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 50px;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
     button {
-      padding: 10px 20px;
+      padding: 15px 30px;
       font-size: 18px;
       cursor: pointer;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    #ja {
+      background-color: #4CAF50;
+      color: white;
     }
     #nein {
-      position: absolute;
-      transition: all 0.3s ease;
+      background-color: #f44336;
+      color: white;
+    }
+    /* Für den Nein-Button, der sich bei Touchbewegungen bewegen soll */
+    @media (max-width: 600px) {
+      #nein {
+        position: absolute;
+        transition: all 0.3s ease;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Willst du Schokopizza probieren? 🍫🍕</h1>
+  <h1>Kannst du mich später anrufen?</h1>
   <button id="ja">Ja</button>
   <button id="nein">Nein</button>
 
@@ -30,15 +52,15 @@
     const neinButton = document.getElementById('nein');
     const jaButton = document.getElementById('ja');
 
-    // Nein-Button springt weg
-    neinButton.addEventListener('mouseover', () => {
+    // Nein-Button springt weg bei Berührung
+    neinButton.addEventListener('touchstart', () => {
       neinButton.style.top = Math.random() * 300 + "px";
       neinButton.style.left = Math.random() * 300 + "px";
     });
 
     // Nachricht bei Ja
     jaButton.addEventListener('click', () => {
-      alert('Danke, dass du Schokopizza liebst! 😄');
+      alert('THANK YOU ARE SO CCCCCCCCCCCCCCCCCUUUUUUUUUUTTTTTTTTTTTEEEEEEEEEEEEEEEEEEE 😄');
       console.log('Die Person hat Ja gedrückt!');
     });
   </script>
